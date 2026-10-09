@@ -14,16 +14,16 @@
     <body>
         <main>
             <nav class="nav card">
-                <span><a href="#">Обо мне</a></span>
-                <span><a href="#">Примеры работ</a></span>
-                <span><a href="#">Прайс</a></span>
-                <span><a href="#">Калькулятор</a></span>
-                <span><a href="#"></a>Telegram <img src="https://favicon.yandex.net/favicon/telegram.org"></a></span>
-                <span><a href="#"></a>Github <img src="https://favicon.yandex.net/favicon/github.com"></a></span>
-                <span><a href="#"></a>Email <img src="https://favicon.yandex.net/favicon/mail.yandex.ru"></a></span>
-                <span><a href="#"></a>VK <img src="https://favicon.yandex.net/favicon/VK.ru"></a></span>
-                <span><a href="#"></a>Avito <img src="https://favicon.yandex.net/favicon/avito.ru"></a></span>
-                <span><a href="#"></a>TikTok <img src="https://favicon.yandex.net/favicon/TikTok.com"></a></span>
+                <a href="#">Обо мне</a>
+                <a href="#">Примеры работ</a>
+                <a href="#">Прайс</a>
+                <a href="#">Калькулятор</a>
+                <a href="#">Telegram <img src="https://favicon.yandex.net/favicon/telegram.org"></a>
+                <a href="#">Github <img src="https://favicon.yandex.net/favicon/github.com"></a>
+                <a href="#">Email <img src="https://favicon.yandex.net/favicon/mail.yandex.ru"></a>
+                <a href="#">VK <img src="https://favicon.yandex.net/favicon/VK.ru"></a>
+                <a href="#">Avito <img src="https://favicon.yandex.net/favicon/avito.ru"></a>
+                <a href="#">TikTok <img src="https://favicon.yandex.net/favicon/TikTok.com"></a>
             </nav>
 
             <header class="header card"> 
@@ -36,27 +36,59 @@
                 <h3>P.S (Перетащите услугу в корзину, либо нажмите на кнопку)</h3>
                 <section class="base-prices">
                     <h3>БАЗОВЫЙ ПАКЕТ</h3>
-                    <p id="onePageWeb" class="service-card" data-name="Одностраничный сайт" data-price="3000" draggable="true">Одностраничный сайт - 3000₽</p>
-                    <p id="basePageWeb" class="service-card" data-name="Доп.страница по шаблону" data-price="1500" draggable="true">Доп.страница по шаблону + 1500₽</p>
-                    <p id="uniquePageWeb" class="service-card" data-name="Уникальная доп.страница" data-price="2000" draggable="true">Уникальная доп.страница + 2000₽</p>
+                    <div id="onePageWeb" class="service-card" data-name="Одностраничный сайт" data-price="3000" draggable="true">
+                        <p>Одностраничный сайт - 3000₽</p>
+                        <button class="add-to-cart-btn">В корзину</button>
+                    </div>
+                    
+                    <div id="basePageWeb" class="service-card" data-name="Доп.страница по шаблону" data-price="1500" draggable="true">
+                        <p>Доп.страница по шаблону + 1500₽</p>
+                        <button class="add-to-cart-btn">В корзину</button>
+                    </div>
+
+                    <div id="uniquePageWeb" class="service-card" data-name="Уникальная доп.страница" data-price="2000" draggable="true">
+                        <p>Уникальная доп.страница + 2000₽</p>
+                        <button class="add-to-cart-btn">В корзину</button>
+                    </div>
                 </section>
 
                 <section class="base-prices">
                     <h3>ДОП УСЛУГИ </h3>
-                    <p id="integration" class="service-card" data-name="Интеграция с Email или Telegram" data-price="1500" draggable="true">Интеграция с Email или Telegram - 1500₽</p>
-                    <p id="calculator" class="service-card" data-name="Калькулятор стоимости" data-price="1500" draggable="true">Калькулятор стоимости + 1500₽</p>
+                    <div id="integration" class="service-card" data-name="Интеграция с Email или Telegram" data-price="1500" draggable="true">
+                        <p>Интеграция с Email или Telegram - 1500₽</p>
+                        <button class="add-to-cart-btn">В корзину</button>
+                    </div>
+
+                    <div id="calculator" class="service-card" data-name="Калькулятор стоимости" data-price="1500" draggable="true">
+                        <p>Калькулятор стоимости + 1500₽</p>
+                        <button class="add-to-cart-btn">В корзину</button>
+                    </div>
                 </section>
 
                 <section class="base-prices">
                     <h3>УДАЛЕННЫЙ СЕРВЕР</h3>
-                    <p id="dataBaseAPI" class="service-card" data-name="База данных и API" data-price="10000" draggable="true"> База данных и API +10000₽</p>
-                    <p id="dataBaseAdmin" class="service-card" data-name="Админка с возможностью изменения данных в базе" data-price="5000" draggable="true">Админка с возможностью изменения данных в базе + 5000₽</p>
+                    <div id="dataBaseAPI" class="service-card" data-name="База данных и API" data-price="10000" draggable="true">
+                        <p> База данных и API +10000₽</p>
+                        <button class="add-to-cart-btn">В корзину</button>
+                    </div>
+
+                    <div id="dataBaseAdmin" class="service-card" data-name="Админка с возможностью изменения данных в базе" data-price="5000" draggable="true">
+                        <p>Админка с возможностью изменения данных в базе + 5000₽</p>
+                        <button class="add-to-cart-btn">В корзину</button>
+                    </div>
                 </section>
 
                 <section class="base-prices">
                     <h3>TELEGRAM</h3>
-                    <p id="telegramChatBot" class="service-card" data-name="Чат-бот с заготовленными быстрыми ответами" data-price="6000" draggable="true">Чат-бот с заготовленными быстрыми ответами +6000₽</p>
-                    <p id="telegramWebApps" class="service-card" data-name="Telegram WEB-APPS" data-price="7000" draggable="true">Telegram WEB-APPS +7000₽</p>
+                    <div id="telegramChatBot" class="service-card" data-name="Чат-бот с заготовленными быстрыми ответами" data-price="6000" draggable="true">
+                        <p>Чат-бот с заготовленными быстрыми ответами +6000₽</p>
+                        <button class="add-to-cart-btn">В корзину</button>
+                    </div>
+
+                    <div id="telegramWebApps" class="service-card" data-name="Telegram WEB-APPS" data-price="7000" draggable="true">   
+                        <p>Telegram WEB-APPS +7000₽</p>
+                        <button class="add-to-cart-btn">В корзину</button>
+                    </div>
                 </section>
 
                 
