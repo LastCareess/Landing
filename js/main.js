@@ -9,7 +9,7 @@ const totalPrice = document.getElementById('total-price')
 const calculatorPool = document.getElementById('calculator-pool')
 
 function renderCart() {
-    calculatorPool.innerHTML = ""
+    calculatorPool.innerHTML = "<p class='calculator-cart-placeholder'>Выбранные услуги (можно перетащить еще):</p>"
 
     cart.forEach(item => {
         const cardElement = document.createElement('div')
@@ -17,8 +17,8 @@ function renderCart() {
 
         cardElement.innerHTML = `
             <p>Название услуги: ${item.name} </p>
-            <p>Цена услуги: ${item.price}₽</p>
-            <p>Количество услуг:</p>
+            <p>Цена услуг: ${item.price*item.quantity}₽</p>
+            <span>Количество услуг:</span>
             <span class="counter-btn" data-id="${item.id}" data-action="plus"><button>+</button></span>
             <span> ${item.quantity} </span>
             <span class="counter-btn" data-id="${item.id}" data-action="minus"><button>-</button></span>
@@ -26,6 +26,8 @@ function renderCart() {
 
         calculatorPool.appendChild(cardElement)
     })
+
+    
 }
 
 
@@ -49,6 +51,9 @@ calculatorPool.addEventListener('click', (event) => {
             item.quantity ++
         } else if (action==="minus") {
             item.quantity --
+            if (item.quantity <= 0){
+                cart = cart.filter(cartItem => cartItem.id !== id)
+            }
         }
     }
 
