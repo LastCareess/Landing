@@ -1,7 +1,29 @@
+.glass {
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    
+    box-shadow: 
+        0 8px 32px 0 rgba(0, 0, 0, 0.37),
+        inset 0 1px 1px 0 rgba(255, 255, 255, 0.1); 
+}
+
+
 body{
-    background-color: hsl(254, 61%, 9%);
+    background: linear-gradient(-45deg, 
+        hsla(286, 82%, 11%, 0.9), 
+        hsla(330, 100%, 12%, 0.7), 
+        hsla(180, 100%, 18%, 0.5), 
+        hsla(286, 87%, 12%, 0.9)
+    );
     color: hsl(255, 30%, 95%);
     font-family: "Tektur";
+
+    background-size: 400% 400%;
+
+    animation: neonWave 12s ease infinite;
 }
 
 .tektur {
@@ -11,6 +33,12 @@ body{
   font-style: normal;
   font-variation-settings:
     "wdth" 100;
+}
+
+main{
+    display: grid;
+    gap:20px;
+    grid-template-columns: 2fr 1fr;
 }
 
 .header {
@@ -32,6 +60,30 @@ body{
     animation: neonWave 12s ease infinite;
 }
 
+.header-slider-container {
+    grid-column: 1/2;
+    position: relative;
+}
+
+.slider-tape {
+    display: flex;
+    width: 300%;
+    transition: transform 0.5s ease;
+}
+
+.slider-viewport {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.slide {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+
+
 header{
     grid-column: 1/2;
 }
@@ -50,18 +102,26 @@ header{
 }
 
 .card {
-    background-color: hsla(286, 87%, 18%, 0.904);
+    background-color: hsla(286, 91%, 9%, 0.87);
     border-radius: 16px;
     padding: 24px;
-    box-shadow: 0 4px 20px hsla(330, 98%, 48%, 0.11);
-    border: 1px solid rgba(255, 0, 127, 0.2); 
+}
+
+.base-prices {
+    border-radius: 16px;
+    padding: 24px; 
+    background-color: hsla(286, 91%, 9%, 0.87);
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 /* Карточка услуги */
 .service-card {
-    background-color: hsla(246, 87%, 18%, 0.904);
+    background-color: hsl(278, 91%, 17%);
     border-radius: 16px;
-    padding: 24px;
+
     box-shadow: 0 4px 20px hsla(330, 98%, 48%, 0.11);
     border: 1px solid rgba(255, 0, 127, 0.2); 
 
@@ -70,40 +130,50 @@ header{
     align-items: center;
 
     padding: 10px ;
-    border-bottom:  1px solid rgba(255, 0, 127, 0.1);    
+    border-bottom:  1px solid rgba(255, 0, 127, 0.1);   
+    
+    transition: 0.3s;
+
 }
 
 .service-card:hover {
-    transition: 0.3s;
     border-color: hsl(180, 100%, 50%);         
     box-shadow: 0 0 15px rgba(0, 242, 254, 0.2); 
 
 }
 
-
-.base-prices {
-    background-color: hsla(286, 91%, 9%, 0.904);
-    border-radius: 16px;
-    padding: 24px;
-    box-shadow: 0 4px 20px hsla(330, 98%, 48%, 0.11);
-    border: 1px solid rgba(255, 0, 127, 0.2); 
-}
-
-
-main{
-    display: grid;
-    gap:20px;
-    grid-template-columns: 2fr 1fr;
-}
-
-
 .price {
     grid-column: 1/2;
+    border-radius: 16px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.price-info {
+    background: rgba(255, 255, 255, 0.03); 
+    border-radius: 16px;
+    padding: 24px;
+
 }
 
 .calculator {
     grid-column: 2/3;
     grid-row: 2/4;
+
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 16px;
+    gap: 5px;
+}
+
+.calculator-header {
+    border-radius: 16px;
+    padding: 24px;
+    background-color: hsla(286, 91%, 9%, 0.87);
 }
 
 .calculator-output {
@@ -114,26 +184,21 @@ main{
 
 
     background: linear-gradient(-45deg, 
-        hsla(286, 100%, 29%, 0.9), 
+        hsla(14, 100%, 26%, 0.9), 
         hsla(342, 100%, 39%, 0.788), 
-        hsla(180, 100%, 50%, 0.685), 
-        hsla(0, 1%, 79%, 0.9)
+        hsla(9, 100%, 37%, 0.685), 
+        hsla(0, 100%, 30%, 0.9)
     );
-
     background-size: 400% 400%;
-
     animation: neonWave 12s ease infinite;
 }
 
 .calculator-cart{
-    background-color: hsla(286, 91%, 9%, 0.904);
+    background-color: hsla(0, 0%, 97%, 0);
     border-radius: 16px;
     padding: 24px;
-    box-shadow: 0 4px 20px hsla(330, 98%, 48%, 0.11);
+    flex-grow: 1; 
 }
-
-
-
 
 
 
@@ -142,7 +207,7 @@ footer{
 }
 
 .chosen-service{
-    background-color: hsla(246, 87%, 18%, 0.904);
+    background-color: hsl(278, 91%, 17%);
     border: 1px solid rgba(0, 242, 254, 0.2);   
     border-radius: 0.75rem;                     
     padding: 1rem;
@@ -159,9 +224,6 @@ footer{
 
 
 
-
-
-
 /* Общие неоновые кнопки */
 .add-to-cart-btn{
     background: transparent;
@@ -175,6 +237,18 @@ footer{
     cursor: pointer;
     box-shadow: inset 0 0 8px rgba(255, 0, 127, 0.2), 0 0 8px rgba(255, 0, 127, 0.2);
     transition: all 0.25s ease;
+
+
+    background: linear-gradient(-45deg, 
+        hsla(14, 100%, 26%, 0.9), 
+        hsla(342, 100%, 39%, 0.788), 
+        hsla(9, 100%, 37%, 0.685), 
+        hsla(0, 100%, 30%, 0.9)
+    );
+
+    background-size: 400% 400%;
+
+    animation: neonWave 12s ease infinite;
 }
 
 .add-to-cart-btn {
@@ -183,21 +257,16 @@ footer{
 }
 
 .add-to-cart-btn:hover {
-    color: hsl(254, 61%, 9%);
-    background: hsl(180, 100%, 50%);
     border-color: hsl(180, 100%, 50%);
     box-shadow: 0 0 15px hsl(180, 100%, 50%), inset 0 0 10px rgba(255, 255, 255, 0.5);
     transform: translateY(-1px);
+    filter: brightness(1.2); 
 }
 
 .add-to-cart-btn:active{
     transform: translateY(1px);
     box-shadow: 0 0 5px hsl(180, 100%, 50%);
 }
-
-
-
-
 
 
 

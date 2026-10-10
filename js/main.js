@@ -8,8 +8,32 @@ const totalPrice = document.getElementById('total-price')
 // Пул калькулятора в котором будут появляться услуги
 const calculatorPool = document.getElementById('calculator-pool')
 
+// Информативная лента
+const sliderTape = document.getElementById('slider-tape')
+const sliderBtn = document.getElementById('slider-btn')
+
+let sliderIndex = 0
+
+// Переключение информативного слайда по кнопке
+
+sliderBtn.addEventListener('click', () => {
+    sliderIndex ++
+
+    if (sliderIndex >= 3) {
+        sliderIndex = 0
+    }
+
+    const shiftPercentage = sliderIndex * 33.333
+
+    sliderTape.style.transform = `translateX(-${shiftPercentage}%)`
+})
 
 
+
+
+
+
+// Ререндер корзины
 function renderCart() {
     calculatorPool.innerHTML = "<p class='calculator-cart-placeholder'>Выбранные услуги (можно перетащить еще):</p>"
 
@@ -27,9 +51,18 @@ function renderCart() {
         `
         calculatorPool.appendChild(cardElement)
     })
-
-    
 }
+
+// Перерасчет суммы и рендер корзины
+function updateCartUi(){
+    const totalSum = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0)
+    
+    renderCart()
+    
+    totalPrice.textContent = totalSum  
+}
+    
+
 
 // Логика Калькулятора
 // Нажатие по кнопке "В КОРЗИНУ"
@@ -57,11 +90,8 @@ servicesPool.addEventListener('click', (event) => {
             quantity:1
         })
     }
-    const totalSum = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0)
     
-    renderCart()
-    
-    totalPrice.textContent = totalSum  
+    updateCartUi()
 })
 
 
@@ -86,13 +116,7 @@ calculatorPool.addEventListener('click', (event) => {
         }
     }
 
-    const totalSum = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0)
-    
-    renderCart()
-    
-    totalPrice.textContent = totalSum  
-
-
+    updateCartUi()
 })
 
 
@@ -109,6 +133,14 @@ servicesPool.addEventListener("dragstart", (event) => {
 // Разрешаем кидать услугу в корзину
 calculatorPool.addEventListener('dragover', (event) => {
     event.preventDefault()
+})
+
+// Снимаем класс когда закончился перенос карточки
+servicesPool.addEventListener('dragend', (event) => {
+    const draggedItem = event.target.closest('div[data-price]')
+    if (draggedItem) {
+        draggedItem.classList.remove('dragging')
+    }
 })
 
 // Обработка прилетевших данных
@@ -135,13 +167,7 @@ calculatorPool.addEventListener("drop", (event) => {
         })
     }
 
-    const totalSum = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0)
-    
-    renderCart()
-    
-    totalPrice.textContent = totalSum  
-
-
+    updateCartUi()
 })
 
 

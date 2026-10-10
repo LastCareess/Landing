@@ -26,14 +26,40 @@
                 <a href="#">TikTok <img src="https://favicon.yandex.net/favicon/TikTok.com"></a>
             </nav>
 
-            <header class="header card"> 
-                <h1>Artur Hellway</h1>
-                <p>Junior-Fullstack(backend) developer</p>  
+            <header class="header-slider-container">   
+                <div class="slider-viewport">
+                    
+                    <div class="slider-tape" id="slider-tape">
+                        <button class="add-to-cart-btn" id="slider-btn">Далее ➔</button>
+                        <div class="slide card">
+                            <h1>Artur Hellway</h1>
+                            <p>WEB / Backend developer</p>  
+                            
+                        </div>
+
+                        <div class="slide card">
+                            <h1>Artur Hellway</h1>
+                            <p>Junior-Fullstack(backend) developer</p>  
+                            
+                        </div>
+
+                        <div class="slide card">
+                            <h1>Artur Hellway</h1>
+                            <p>Junior-Fullstack(backend) developer</p>  
+                            
+                        </div>
+                        
+                    </div>
+                    
+                </div>
             </header>
 
-            <section class="price card">
-                <h2>Прайс услуг</h2>
-                <h3>P.S (Перетащите услугу в корзину, либо нажмите на кнопку)</h3>
+            <section class="price">
+                <div class="price-info glass">
+                    <h2>Прайс услуг</h2>
+                    <h3>P.S (Перетащите услугу в корзину, либо нажмите на кнопку)</h3>
+                </div>
+                
                 <section class="base-prices">
                     <h3>БАЗОВЫЙ ПАКЕТ</h3>
                     <div id="onePageWeb" class="service-card" data-name="Одностраничный сайт" data-price="3000" draggable="true">
@@ -95,14 +121,17 @@
 
             </section>
 
-            <section class="calculator card">
-                <h2>Корзина🧺</h2>
-                
-                <div class="calculator-output">
-                    <p>Итоговая цена: <span id="total-price">0</span>₽</p>
+            <section class="calculator">
+                <div class="calculator-header">
+                    <h2>Корзина🧺</h2>
+                    <div class="calculator-output">
+                        <h3>Итоговая цена: <span id="total-price">0</span>₽</h3>
+                    </div>
                 </div>
+                
+                
 
-                <div class="calculator-cart" id="calculator-pool">
+                <div class="calculator-cart glass" id="calculator-pool">
                     <p class="calculator-cart-placeholder">Перетащите сюда все услуги которые вам нужны из прайса🧺</p>
                 </div>
 
