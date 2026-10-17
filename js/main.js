@@ -8,30 +8,14 @@ const totalPrice = document.getElementById('total-price')
 // Пул калькулятора в котором будут появляться услуги
 const calculatorPool = document.getElementById('calculator-pool')
 
-// Информативная лента
-const sliderTape = document.getElementById('slider-tape')
-const sliderBtn = document.getElementById('slider-btn')
 
-let sliderIndex = 0
+// Слайдер
+const sliderViewport = document.getElementById("slider-viewport")
 
-// Переключение информативного слайда по кнопке
-
-sliderBtn.addEventListener('click', () => {
-    sliderIndex ++
-
-    if (sliderIndex >= 3) {
-        sliderIndex = 0
-    }
-
-    const shiftPercentage = sliderIndex * 33.333
-
-    sliderTape.style.transform = `translateX(-${shiftPercentage}%)`
+sliderViewport.scrollBy({
+    left: sliderViewport.clientWidth,
+    behavior: 'smooth'
 })
-
-
-
-
-
 
 // Ререндер корзины
 function renderCart() {

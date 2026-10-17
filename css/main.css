@@ -1,33 +1,18 @@
 /* Общие классы */
-.glass {
-
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-
-    border: 1px solid rgba(255, 255, 255, 0.09);
-    
-    box-shadow: 
-        0 8px 32px 0 rgba(0, 0, 0, 0.37),
-        inset 0 1px 1px 0 rgba(255, 255, 255, 0.1); 
-}
-
-
 .card {
-    background-color: hsla(286, 91%, 9%, 0.87);
+    background-color: rgb(227, 245, 245);
     border-radius: 16px;
     padding: 24px;
+    border: 1px solid gray;
 }
 /* Общие классы */
 
 
 body{
-    background-color: rgb(41, 41, 41);
-    color: hsl(255, 30%, 95%);
-    font-family: "Tektur";
-
-    background-size: 400% 400%;
-
-    animation: neonWave 12s ease infinite;
+    background-color:azure;
+    color: rgb(26, 25, 25);
+    font-family: "Tektur", sans-serif;
+    
 }
 
 .tektur {
@@ -45,48 +30,40 @@ main{
     grid-template-columns: 2fr 1fr;
 }
 
-.header {
-    background-color: hsla(286, 87%, 18%, 0.904);
-    padding: 24px;
-    box-shadow: 0 4px 20px hsla(330, 98%, 48%, 0.11);
-    border: 1px solid rgba(255, 0, 127, 0.2); 
-    border-radius: 16px;
-
-    background: linear-gradient(-45deg, 
-        hsla(286, 87%, 18%, 0.9), 
-        hsla(330, 98%, 48%, 0.7), 
-        hsla(180, 100%, 50%, 0.5), 
-        hsla(286, 87%, 18%, 0.9)
-    );
-
-    background-size: 400% 400%;
-
-    animation: neonWave 12s ease infinite;
-}
-
+/* Слайдер */
 .header-slider-container {
     grid-column: 1/2;
     position: relative;
 }
 
-.slider-tape {
-    display: flex;
-    width: 300%;
-    transition: transform 0.5s ease;
-}
 
 .slider-viewport {
-    width: 100%;
-    overflow: hidden;
-    border-radius: 16px;
+    display: flex;
+
+    overflow-x: auto;
+    scroll-behavior: smooth;
+
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: none; 
 }
+
+.slider-viewport::-webkit-scrollbar {
+    display: none;
+}
+
 
 .slide {
     width: 100%;
     flex-shrink: 0;
+
+    scroll-snap-align: start;
+
+    padding: 24px;
+    box-sizing: border-box;
 }
 
-
+/* Слайдер */
 
 header{
     grid-column: 1/2;
@@ -102,14 +79,13 @@ header{
 
 .nav a {
     text-decoration: none;
-    color: azure;
+    color: rgb(81, 82, 82);
 }
 
 .base-prices {
     border-radius: 16px;
     padding: 24px; 
-    background-color: hsla(286, 91%, 9%, 0.87);
-
+   
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -117,27 +93,24 @@ header{
 
 /* Карточка услуги */
 .service-card {
-    background-color: hsl(278, 91%, 17%);
-    border-radius: 16px;
-
-    box-shadow: 0 4px 20px hsla(330, 98%, 48%, 0.11);
-    border: 1px solid rgba(255, 0, 127, 0.2); 
-
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     padding: 10px ;
-    border-bottom:  1px solid rgba(255, 0, 127, 0.1);   
+    
     
     transition: 0.3s;
 
+    border-radius: 16px;
+
+    border: 1px solid gray;
 }
 
 .service-card:hover {
-    border-color: hsl(180, 100%, 50%);         
-    box-shadow: 0 0 15px rgba(0, 242, 254, 0.2); 
-
+    border-color: gray;         
+    box-shadow: 0 0 15px gray; 
+    
 }
 
 .price {
@@ -151,10 +124,10 @@ header{
 }
 
 .price-info {
-    background: rgba(255, 255, 255, 0.03); 
+    background-color: rgb(227, 245, 245);
     border-radius: 16px;
     padding: 24px;
-
+    border: 1px solid gray;
 }
 
 .calculator {
@@ -164,37 +137,24 @@ header{
     display: flex;
     flex-direction: column;
 
-    border-radius: 16px;
     gap: 5px;
 }
 
 .calculator-header {
     border-radius: 16px;
     padding: 24px;
-    background-color: hsla(286, 91%, 9%, 0.87);
 }
 
 .calculator-output {
-    background-color: hsla(286, 91%, 9%, 0.904);
     border-radius: 16px;
     padding: 0.5rem;
     margin-bottom: 0.5rem;
-
-
-    background: linear-gradient(-45deg, 
-        hsla(14, 100%, 26%, 0.9), 
-        hsla(342, 100%, 39%, 0.788), 
-        hsla(9, 100%, 37%, 0.685), 
-        hsla(0, 100%, 30%, 0.9)
-    );
-    background-size: 400% 400%;
-    animation: neonWave 12s ease infinite;
+    
+    color: hsl(255, 30%, 95%);
+    background-color: brown;
 }
 
-.calculator-cart{
-    background-color: hsla(0, 0%, 97%, 0);
-    border-radius: 16px;
-    padding: 24px;
+.calculator-cart{ 
     flex-grow: 1; 
 }
 
@@ -205,24 +165,19 @@ footer{
 }
 
 .chosen-service{
-    background-color: hsl(278, 91%, 17%);
-    border: 1px solid rgba(0, 242, 254, 0.2);   
-    border-radius: 0.75rem;                     
-    padding: 1rem;
-    margin-bottom: 1rem;                        
-    box-shadow: 0 0 10px rgba(0, 242, 254, 0.05); 
+    border: 1px solid gray;
+    border-radius: 16px;
+    padding: 10px;
     transition: all 0.3s ease;
+    margin-bottom: 5px;
 }
 
 .chosen-service:hover {
-    border-color: hsl(180, 100%, 50%);         
-    box-shadow: 0 0 15px rgba(0, 242, 254, 0.2); 
-
+    border-color: gray;         
+    box-shadow: 0 0 15px gray; 
 }
 
 
-
-/* Общие неоновые кнопки */
 .add-to-cart-btn{
     background: transparent;
     color: hsl(255, 30%, 95%);
@@ -230,23 +185,15 @@ footer{
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border: 1px solid rgba(255, 0, 127, 0.5); /* Розовая рамка */
+    border: 1px solid gray;
     border-radius: 8px;
     cursor: pointer;
     box-shadow: inset 0 0 8px rgba(255, 0, 127, 0.2), 0 0 8px rgba(255, 0, 127, 0.2);
     transition: all 0.25s ease;
 
+    background-color: brown;
 
-    background: linear-gradient(-45deg, 
-        hsla(14, 100%, 26%, 0.9), 
-        hsla(342, 100%, 39%, 0.788), 
-        hsla(9, 100%, 37%, 0.685), 
-        hsla(0, 100%, 30%, 0.9)
-    );
 
-    background-size: 400% 400%;
-
-    animation: neonWave 12s ease infinite;
 }
 
 .add-to-cart-btn {
@@ -255,34 +202,16 @@ footer{
 }
 
 .add-to-cart-btn:hover {
-    border-color: hsl(180, 100%, 50%);
-    box-shadow: 0 0 15px hsl(180, 100%, 50%), inset 0 0 10px rgba(255, 255, 255, 0.5);
+    border-color: gray;         
+    box-shadow: 0 0 15px gray; 
     transform: translateY(-1px);
     filter: brightness(1.2); 
 }
 
 .add-to-cart-btn:active{
     transform: translateY(1px);
-    box-shadow: 0 0 5px hsl(180, 100%, 50%);
+    box-shadow: 0 0 15px red; 
 }
-
-
-
-/* Старый мусор */
-
-/* @keyframes neonWave {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-} */
-
-
 
 
 

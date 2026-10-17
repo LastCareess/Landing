@@ -1,3 +1,14 @@
+<!-- 
+TODO:
+1. Больше картинок
+2. Описание у карточки либо меньше места между текстом и кнопкой в корзину
+3. Выделить навигацию 
+
+
+
+-->
+
+
 <!DOCTYPE html>
 <html lang="ru">
     <head>
@@ -16,8 +27,6 @@
             <nav class="nav card">
                 <a href="#">Обо мне</a>
                 <a href="#">Примеры работ</a>
-                <a href="#">Прайс</a>
-                <a href="#">Калькулятор</a>
                 <a href="#">Telegram <img src="https://favicon.yandex.net/favicon/telegram.org"></a>
                 <a href="#">Github <img src="https://favicon.yandex.net/favicon/github.com"></a>
                 <a href="#">Email <img src="https://favicon.yandex.net/favicon/mail.yandex.ru"></a>
@@ -27,32 +36,28 @@
             <header class="header-slider-container">   
                 <div class="slider-viewport">
                     
-                    <div class="slider-tape" id="slider-tape">
                         
-                        <div class="slide card">
-                            <h1>Artur Hellway</h1>
-                            <p>Веб-разработчик со стажем 1 год</p>  
-                            
-                        </div>
-
-                        <div class="slide card">
-                            <h2>Лендинги</h2>
-                            <p>Сделаю качественный лендинг(сайт-визитку) с адаптивностью и продающей версткой</p>  
-                        </div>
+                    <div class="slide card">
+                        <h1>Artur Hellway</h1>
+                        <p>Веб-разработчик со стажем 1 год</p>  
                         
                     </div>
-                    <button class="add-to-cart-btn" id="slider-btn">Далее ➔</button>
-                </div>
-                
+
+                    <div class="slide card">
+                        <h2>Лендинги</h2>
+                        <p>Сделаю качественный лендинг(сайт-визитку) с адаптивностью и продающей версткой</p>  
+                    </div>
+                </div>     
+                <button class="add-to-cart-btn" id="slider-btn">Далее ➔</button>  
             </header>
 
-            <section class="price">
-                <div class="price-info glass">
+            <section class="price ">
+                <div class="price-info">
                     <h2>Прайс услуг</h2>
                     <h3>P.S (Перетащите услугу в корзину, либо нажмите на кнопку)</h3>
                 </div>
                 
-                <section class="base-prices">
+                <section class="base-prices card">
                     <h3>Лэндинги</h3>
                     <div id="onePageWeb" class="service-card" data-name="Одностраничный сайт" data-price="3000" draggable="true">
                         <p>Одностраничный сайт - 3000₽</p>
@@ -65,8 +70,8 @@
                     </div>
                 </section>
 
-                <section class="base-prices">
-                    <h3>ДОП УСЛУГИ </h3>
+                <section class="base-prices card">
+                    <h3>Подключаемые услуги</h3>
                     <div id="integration" class="service-card" data-name="Интеграция с Email или Telegram" data-price="1500" draggable="true">
                         <p>Интеграция с Email или Telegram - 1500₽</p>
                         <button class="add-to-cart-btn">В корзину</button>
@@ -82,7 +87,7 @@
             
 
             <section class="calculator">
-                <div class="calculator-header">
+                <div class="calculator-header card">
                     <h2>Корзина🧺</h2>
                     <div class="calculator-output">
                         <h3>Итоговая цена: <span id="total-price">0</span>₽</h3>
@@ -91,7 +96,7 @@
                 
                 
 
-                <div class="calculator-cart glass" id="calculator-pool">
+                <div class="calculator-cart card" id="calculator-pool">
                     <p class="calculator-cart-placeholder">Перетащите сюда все услуги которые вам нужны из прайса🧺</p>
                 </div>
 
