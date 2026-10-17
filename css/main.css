@@ -1,3 +1,4 @@
+/* Общие классы */
 .glass {
 
     backdrop-filter: blur(16px);
@@ -11,13 +12,16 @@
 }
 
 
+.card {
+    background-color: hsla(286, 91%, 9%, 0.87);
+    border-radius: 16px;
+    padding: 24px;
+}
+/* Общие классы */
+
+
 body{
-    background: linear-gradient(-45deg, 
-        hsla(286, 82%, 11%, 0.9), 
-        hsla(330, 100%, 12%, 0.7), 
-        hsla(180, 100%, 18%, 0.5), 
-        hsla(286, 87%, 12%, 0.9)
-    );
+    background-color: rgb(41, 41, 41);
     color: hsl(255, 30%, 95%);
     font-family: "Tektur";
 
@@ -99,12 +103,6 @@ header{
 .nav a {
     text-decoration: none;
     color: azure;
-}
-
-.card {
-    background-color: hsla(286, 91%, 9%, 0.87);
-    border-radius: 16px;
-    padding: 24px;
 }
 
 .base-prices {
@@ -270,7 +268,9 @@ footer{
 
 
 
-@keyframes neonWave {
+/* Старый мусор */
+
+/* @keyframes neonWave {
     0% {
         background-position: 0% 50%;
     }
@@ -280,7 +280,7 @@ footer{
     100% {
         background-position: 0% 50%;
     }
-}
+} */
 
 
 
